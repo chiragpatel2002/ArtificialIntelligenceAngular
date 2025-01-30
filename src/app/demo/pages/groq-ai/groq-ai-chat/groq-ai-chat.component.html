@@ -1,0 +1,36 @@
+<!-- <app-card cardTitle="AI Chat" cardClass="tab-card tab-content" blockClass="nav-fill" [options]="false">
+     -->
+    <div class="chat-page">
+        <div class="chat-container">
+          <div class="message-list">
+            <div *ngFor="let message of displayMessages" class="message"
+              [ngClass]="{'you': message.username.toLowerCase() === 'user', 'other': message.username.toLowerCase() !== 'user'}">
+              <div class="message-content">
+                <span class="username">{{ message.username | slice:0:1 | uppercase }}{{ message.username | slice:1 | lowercase }} : </span>{{ message.text }}
+              </div>
+            </div>
+          </div>
+      
+          <div class="model-selection">
+            <label for="model">Select Model:</label>
+            <select id="model" [(ngModel)]="selectedModel">
+              <option *ngFor="let model of models" [value]="model">{{ model }}</option>
+            </select>
+            
+            <label for="content">Select Content Type:</label>
+            <select id="content" [(ngModel)]="selectedContent">
+              <option *ngFor="let contentType of contentType" [value]="contentType">{{ contentType }}</option>
+            </select>
+          </div>
+      
+          <div class="send-message">
+            <div class="w-100">
+                <textarea [(ngModel)]="newMessage" placeholder="Type a message" (keyup.enter)="sendMessage()" ></textarea>
+            </div>
+            <div>
+                <button (click)="sendMessage()">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+<!-- </app-card> -->

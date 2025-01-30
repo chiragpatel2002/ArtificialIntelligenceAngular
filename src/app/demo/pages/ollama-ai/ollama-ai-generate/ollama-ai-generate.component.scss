@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .chat-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .chat-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+  }
+  
+  .message {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-content {
+    background-color: #4099ff;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  
+  .you .message-content {
+    align-self: flex-end;
+    background-color: #4099ff;
+  }
+  
+  .other .message-content {
+    align-self: flex-start;
+    background-color: #6699ff;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .model-selection {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .send-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  textarea {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #4099ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #307bcc;
+  }
+  
+  @media (max-width: 768px) {
+    .chat-container {
+      width: 100%;
+    }
+  
+    textarea {
+      width: 70%;
+    }
+  
+    button {
+      width: 25%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chat-page {
+      padding: 10px;
+    }
+  
+    .message-list {
+      max-height: 300px;
+    }
+  
+    textarea {
+      width: 60%;
+    }
+  
+    button {
+      width: 35%;
+    }
+  
+    .message-content {
+      max-width: 90%;
+    }
+  }  

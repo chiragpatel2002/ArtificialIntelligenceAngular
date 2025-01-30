@@ -1,0 +1,32 @@
+<!-- dynamic-table.component.html -->
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <!-- Serial Number Column -->
+            <th *ngIf="isSerialNoColumn">#</th>
+            <!-- Dynamic Columns -->
+            <th *ngFor="let column of columns"
+                (click)="sortableColumns.includes(column.field) && sortData(column.field)">
+                {{ column.displayName }}
+                <span *ngIf="sortableColumns.includes(column.field)">⇅</span> <!-- Add sorting icon -->
+            </th>
+            <!-- Action Column -->
+            <th *ngIf="isActionColumn">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of data; let i = index">
+            <!-- Serial Number Column -->
+            <td *ngIf="isSerialNoColumn">{{ i + 1 }}</td>
+            <!-- Dynamic Columns -->
+            <td *ngFor="let column of columns">{{ row[column.field] }}</td>
+            <!-- Action Column -->
+            <td *ngIf="isActionColumn">
+                <button *ngIf="isEdit" (click)="onEdit(row)">Edit</button>
+                <button *ngIf="isPreview" (click)="onPreview(row)">Preview</button>
+                <button *ngIf="isDownload" (click)="onDownload(row)">Download</button>
+                <button *ngIf="isDelete" (click)="onDelete(row)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
